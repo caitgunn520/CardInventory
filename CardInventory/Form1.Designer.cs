@@ -40,10 +40,10 @@ namespace CardInventory
             this.cardList = new System.Windows.Forms.TextBox();
             this.cardListLabel = new System.Windows.Forms.Label();
             this.cardDisplay = new System.Windows.Forms.Panel();
-            this.nameDisplay = new System.Windows.Forms.Label();
-            this.descripDisplay = new System.Windows.Forms.Label();
-            this.healthDisplay = new System.Windows.Forms.Label();
             this.powerDisplay = new System.Windows.Forms.Label();
+            this.healthDisplay = new System.Windows.Forms.Label();
+            this.descripDisplay = new System.Windows.Forms.Label();
+            this.nameDisplay = new System.Windows.Forms.Label();
             this.addButton = new System.Windows.Forms.Button();
             this.viewPreviewButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
@@ -160,6 +160,32 @@ namespace CardInventory
             this.cardDisplay.Size = new System.Drawing.Size(138, 203);
             this.cardDisplay.TabIndex = 10;
             // 
+            // powerDisplay
+            // 
+            this.powerDisplay.Location = new System.Drawing.Point(116, 178);
+            this.powerDisplay.Name = "powerDisplay";
+            this.powerDisplay.Size = new System.Drawing.Size(17, 20);
+            this.powerDisplay.TabIndex = 3;
+            this.powerDisplay.Text = "label1";
+            // 
+            // healthDisplay
+            // 
+            this.healthDisplay.Location = new System.Drawing.Point(3, 178);
+            this.healthDisplay.Name = "healthDisplay";
+            this.healthDisplay.Size = new System.Drawing.Size(17, 23);
+            this.healthDisplay.TabIndex = 2;
+            this.healthDisplay.Text = "label1";
+            this.healthDisplay.Visible = false;
+            // 
+            // descripDisplay
+            // 
+            this.descripDisplay.Location = new System.Drawing.Point(22, 97);
+            this.descripDisplay.Name = "descripDisplay";
+            this.descripDisplay.Size = new System.Drawing.Size(95, 66);
+            this.descripDisplay.TabIndex = 1;
+            this.descripDisplay.Text = "label1";
+            this.descripDisplay.Visible = false;
+            // 
             // nameDisplay
             // 
             this.nameDisplay.AutoSize = true;
@@ -171,32 +197,6 @@ namespace CardInventory
             this.nameDisplay.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.nameDisplay.Visible = false;
             // 
-            // descripDisplay
-            // 
-            this.descripDisplay.Location = new System.Drawing.Point(22, 97);
-            this.descripDisplay.Name = "descripDisplay";
-            this.descripDisplay.Size = new System.Drawing.Size(95, 66);
-            this.descripDisplay.TabIndex = 1;
-            this.descripDisplay.Text = "label1";
-            this.descripDisplay.Visible = false;
-            // 
-            // healthDisplay
-            // 
-            this.healthDisplay.Location = new System.Drawing.Point(3, 178);
-            this.healthDisplay.Name = "healthDisplay";
-            this.healthDisplay.Size = new System.Drawing.Size(17, 23);
-            this.healthDisplay.TabIndex = 2;
-            this.healthDisplay.Text = "label1";
-            this.healthDisplay.Visible = false;
-            // 
-            // powerDisplay
-            // 
-            this.powerDisplay.Location = new System.Drawing.Point(116, 178);
-            this.powerDisplay.Name = "powerDisplay";
-            this.powerDisplay.Size = new System.Drawing.Size(17, 20);
-            this.powerDisplay.TabIndex = 3;
-            this.powerDisplay.Text = "label1";
-            // 
             // addButton
             // 
             this.addButton.Location = new System.Drawing.Point(86, 254);
@@ -205,6 +205,7 @@ namespace CardInventory
             this.addButton.TabIndex = 11;
             this.addButton.Text = "Add Card";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // viewPreviewButton
             // 
@@ -214,6 +215,7 @@ namespace CardInventory
             this.viewPreviewButton.TabIndex = 12;
             this.viewPreviewButton.Text = "Show Preview";
             this.viewPreviewButton.UseVisualStyleBackColor = true;
+            this.viewPreviewButton.Click += new System.EventHandler(this.viewPreviewButton_Click);
             // 
             // saveButton
             // 
@@ -223,6 +225,7 @@ namespace CardInventory
             this.saveButton.TabIndex = 13;
             this.saveButton.Text = "Save All Cards";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // loadButton
             // 
@@ -232,6 +235,7 @@ namespace CardInventory
             this.loadButton.TabIndex = 14;
             this.loadButton.Text = "Load Saved Cards";
             this.loadButton.UseVisualStyleBackColor = true;
+            this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
             // 
             // selectInput
             // 
@@ -248,6 +252,7 @@ namespace CardInventory
             this.removeSelectButton.TabIndex = 16;
             this.removeSelectButton.Text = "Remove";
             this.removeSelectButton.UseVisualStyleBackColor = true;
+            this.removeSelectButton.Click += new System.EventHandler(this.removeSelectButton_Click);
             // 
             // viewSelectButton
             // 
@@ -257,6 +262,7 @@ namespace CardInventory
             this.viewSelectButton.TabIndex = 17;
             this.viewSelectButton.Text = "View";
             this.viewSelectButton.UseVisualStyleBackColor = true;
+            this.viewSelectButton.Click += new System.EventHandler(this.viewSelectButton_Click);
             // 
             // nameSearch
             // 
@@ -326,6 +332,7 @@ namespace CardInventory
             this.searchButton.TabIndex = 25;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // Form1
             // 
