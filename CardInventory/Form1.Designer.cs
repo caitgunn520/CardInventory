@@ -166,7 +166,6 @@ namespace CardInventory
             this.powerDisplay.Name = "powerDisplay";
             this.powerDisplay.Size = new System.Drawing.Size(17, 20);
             this.powerDisplay.TabIndex = 3;
-            this.powerDisplay.Text = "label1";
             // 
             // healthDisplay
             // 
@@ -174,8 +173,6 @@ namespace CardInventory
             this.healthDisplay.Name = "healthDisplay";
             this.healthDisplay.Size = new System.Drawing.Size(17, 23);
             this.healthDisplay.TabIndex = 2;
-            this.healthDisplay.Text = "label1";
-            this.healthDisplay.Visible = false;
             // 
             // descripDisplay
             // 
@@ -183,19 +180,14 @@ namespace CardInventory
             this.descripDisplay.Name = "descripDisplay";
             this.descripDisplay.Size = new System.Drawing.Size(95, 66);
             this.descripDisplay.TabIndex = 1;
-            this.descripDisplay.Text = "label1";
-            this.descripDisplay.Visible = false;
             // 
             // nameDisplay
             // 
-            this.nameDisplay.AutoSize = true;
-            this.nameDisplay.Location = new System.Drawing.Point(48, 7);
+            this.nameDisplay.Location = new System.Drawing.Point(6, 7);
             this.nameDisplay.Name = "nameDisplay";
-            this.nameDisplay.Size = new System.Drawing.Size(35, 13);
+            this.nameDisplay.Size = new System.Drawing.Size(127, 13);
             this.nameDisplay.TabIndex = 0;
-            this.nameDisplay.Text = "label1";
             this.nameDisplay.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.nameDisplay.Visible = false;
             // 
             // addButton
             // 
@@ -370,7 +362,6 @@ namespace CardInventory
             ((System.ComponentModel.ISupportInitialize)(this.healthInput)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.powInput)).EndInit();
             this.cardDisplay.ResumeLayout(false);
-            this.cardDisplay.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.healthSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.powerSearch)).EndInit();
             this.ResumeLayout(false);

@@ -26,7 +26,10 @@ namespace CardInventory
 
         private void viewPreviewButton_Click(object sender, EventArgs e)
         {
-
+            nameDisplay.Text = nameInput.Text;
+            healthDisplay.Text = Convert.ToString(healthInput.Value);
+            powerDisplay.Text = Convert.ToString(powInput.Value);
+            descripDisplay.Text = descripInput.Text;
         }
 
         private void saveButton_Click(object sender, EventArgs e)
