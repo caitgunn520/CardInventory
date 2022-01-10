@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace CardInventory
 {
-    class Card
+    public class Card
     {
-        string name, descrip;
-        int health, power;
+        public string name, descrip;
+        public int health, power;
 
         public Card(string _name, int _health, int _power, string _descrip)
         {
