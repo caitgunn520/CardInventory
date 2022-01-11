@@ -136,6 +136,7 @@ namespace CardInventory
             this.cardList.Location = new System.Drawing.Point(615, 33);
             this.cardList.Multiline = true;
             this.cardList.Name = "cardList";
+            this.cardList.ReadOnly = true;
             this.cardList.Size = new System.Drawing.Size(150, 174);
             this.cardList.TabIndex = 8;
             // 

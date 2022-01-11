@@ -130,7 +130,67 @@ namespace CardInventory
 
         private void searchButton_Click(object sender, EventArgs e)
         {
+            List<Card> searchResults = new List<Card>();
 
+            cardList.Text = "";
+            
+            if (nameSearchTrue.Checked == true)
+            {
+                if (healthSearchTrue.Checked == true)
+                {
+                    if (powerSearchTrue.Checked == true)
+                    {
+                        searchResults = cards.FindAll(x => x.name == nameSearch.Text && x.health == healthSearch.Value 
+                        && x.power == powerSearch.Value);
+                    }
+                    else
+                    {
+                        searchResults = cards.FindAll(x => x.name == nameSearch.Text && x.health == healthSearch.Value);
+                    }
+                }
+                else
+                {
+                    if (powerSearchTrue.Checked == true)
+                    {
+                        searchResults = cards.FindAll(x => x.name == nameSearch.Text && x.power == powerSearch.Value);
+                    }
+                    else
+                    {
+                        searchResults = cards.FindAll(x => x.name == nameSearch.Text);
+                    }
+                }
+            }
+            else
+            {
+                if (healthSearchTrue.Checked == true)
+                {
+                    if (powerSearchTrue.Checked == true)
+                    {
+                        searchResults = cards.FindAll(x => x.health == healthSearch.Value && x.power == powerSearch.Value);
+                    }
+                    else
+                    {
+                        searchResults = cards.FindAll(x => x.health == healthSearch.Value);
+                    }
+                }
+                else
+                {
+                    if (powerSearchTrue.Checked == true)
+                    {
+                        searchResults = cards.FindAll(x => x.power == powerSearch.Value);
+                    }
+                    else
+                    {
+                        searchResults = cards;
+                    }
+                }
+            }
+
+            foreach (Card c in searchResults)
+            {
+                cardList.Text += $"{c.name}{Environment.NewLine}{c.descrip}{Environment.NewLine}" +
+                    $"Health: {c.health} Power: {c.power}{Environment.NewLine}{Environment.NewLine}";
+            }
         }
 
         public void MakeNewCard()
