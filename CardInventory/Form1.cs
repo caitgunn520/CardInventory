@@ -9,6 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 
+/// <summary>
+/// Developer: Cait Morgan
+/// Date: December 12, 2022
+/// Description: To hold an inventory of playing cards. 
+/// </summary>
+
 namespace CardInventory
 {
     public partial class Form1 : Form
@@ -28,13 +34,9 @@ namespace CardInventory
         private void viewPreviewButton_Click(object sender, EventArgs e)
         {
             ViewCard(nameInput.Text, descripInput.Text, Convert.ToInt32(healthInput.Value), Convert.ToInt32(powInput.Value));
-            
-            nameDisplay.Text = nameInput.Text;
-            healthDisplay.Text = Convert.ToString(healthInput.Value);
-            powerDisplay.Text = Convert.ToString(powInput.Value);
-            descripDisplay.Text = descripInput.Text;
         }
 
+        //Each card's information is saved to an xml file. 
         private void saveButton_Click(object sender, EventArgs e)
         {
             XmlWriter writer = XmlWriter.Create("cardInfo.xml");
@@ -58,6 +60,7 @@ namespace CardInventory
             writer.Close();
         }
 
+        //Reads xml file and adds described cards to list. 
         private void loadButton_Click(object sender, EventArgs e)
         {
             string newName, newDescrip;
@@ -88,6 +91,7 @@ namespace CardInventory
 
         private void viewSelectButton_Click(object sender, EventArgs e)
         {
+            //Searches for card written in selectInput. Returns an error if card doesn't exist or if selectInput is empty. 
             if (selectInput.Text != "")
             {
                 int index = cards.FindIndex(n => n.name == selectInput.Text);
@@ -134,6 +138,8 @@ namespace CardInventory
 
             cardList.Text = "";
             
+            ///Uses input from checkboxes to see which conditions to search for.
+            ///If no conditions are selected, shows all cards. 
             if (nameSearchTrue.Checked == true)
             {
                 if (healthSearchTrue.Checked == true)
@@ -193,6 +199,7 @@ namespace CardInventory
             }
         }
 
+        //Adds new card with inputted properties into cardList. 
         public void MakeNewCard()
         {
             if (nameInput.Text != "" && descripInput.Text != "")
@@ -216,6 +223,7 @@ namespace CardInventory
             }
         }
 
+        //Puts card data into preview image. 
         public void ViewCard(string name, string descrip, int health, int power)
         {
             nameDisplay.Text = name;
